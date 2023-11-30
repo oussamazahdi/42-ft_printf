@@ -116,18 +116,22 @@ int ft_printf(const char *format, ...)
     while (format[i])
     {
         if(format[i] == '%')
-            counter += print_format(++format, ap);
+            // counter += print_format(++format, ap);
+            print_format(++format, ap);
 		else
         {
             counter++;
-            write(1,&format[i],1);
+            write(1, &format[i], 1);
         }
         i++;
     }
     va_end(ap);
 	return (counter);
 }
-
+int main()
+{
+    ft_printf("hello %s", "world!");
+}
 
 
 // #include "ft_printf.h"
