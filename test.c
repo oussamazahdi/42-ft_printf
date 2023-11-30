@@ -68,21 +68,42 @@ static void ft_putnbr_hex(long int nb, char c)
         ft_putchar(base[nb]);
 }
 /*================================* ft_putnbr_adr *================================*/
-static void ft_putnbr_adr(long int nb, char c)
+static void ft_putnbr_adr(long int nb)
 {
-    char *base;
-    int    len;
-
     ft_putstr("0x");
     ft_putnbr_hex(nb, 'x');
 }
 /*================================* print_format *================================*/
 static int print_format(char specifier, va_list ap)
 {
-    if(specifier == 'c')
+    if (specifier == 'c')
         ft_putchar(va_arg(ap, int));
+    else if (specifier == 's')
+        ft_putstr(va_arg(ap, int));
+    else if (specifier == 'p')
+        ft_putnbr_adr(va_arg(ap, int));
+    else if (specifier == 'i')
+        ft_putnbr(va_arg(ap, int));
+    else if (specifier == 'u')
+        ft_putnbr_uns(va_arg(ap, int));
+    else if (specifier == 'x')
+        ft_putnbr_hex(va_arg(ap, int), 'x');
+    else if (specifier == 'X')
+        ft_putnbr_hex(va_arg(ap, int), 'X');
+    else if (specifier == '%')
+        ft_putstr('%');
     
 }
+/*
+• %c Prints a single character.
+• %s Prints a string (as defined by the common C convention).
+• %p The void * pointer argument has to be printed in hexadecimal format. • %d Prints a decimal (base 10) number.
+• %i Prints an integer in base 10.
+• %u Prints an unsigned decimal (base 10) number.
+• %x Prints a number in hexadecimal (base 16) lowercase format.
+• %X Prints a number in hexadecimal (base 16) uppercase format.
+• %% Prints a percent sign.
+*/
 /*================================* ft_printf *================================*/
 int ft_printf(const char *format, ...)
 {
