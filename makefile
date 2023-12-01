@@ -6,30 +6,35 @@
 #    By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 08:57:33 by ozahdi            #+#    #+#              #
-#    Updated: 2023/11/29 19:01:08 by ozahdi           ###   ########.fr        #
+#    Updated: 2023/12/01 15:01:19 by ozahdi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	\
-		
-OBJS = ${SRCS:.c=.o}
-NAME = libftprintf.a
-LIBC = ar rcs
-CC = cc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+SRCS	=	ft_putchar.c ft_putnbr_adr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c print_format.c ft_printf.c\
 
-${NAME}: ${OBJS}
-	${LIBC} ${NAME} ${OBJS}
+NAME	=	libftprintf.a
 
-all: ${NAME}
+CC		=	cc
 
-clean:
-	${RM} ${OBJS}
+RM		=	rm -f
 
-fclean: clean
-	${RM} ${NAME}
+CFLAGS	=	-Wall -Wextra -Werror
 
-re: fclean all
+OBJS	=	${SRCS:.c=.o}
 
-.PHONY : all clean fclean re
+${NAME}	:	${OBJS}
+			ar rcs ${NAME} ${OBJS}
+			
+%.o		: %.c  libftprintf.a
+		$(CC) $(CFLAGS) -c $< -o $@
+
+all		:	${NAME}
+
+clean	:	${RM} ${OBJS}
+
+fclean	:	clean
+			${RM} ${NAME}
+
+re		:	fclean all
+
+.PHONY	:	all clean fclean re
