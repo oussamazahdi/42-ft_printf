@@ -6,35 +6,33 @@
 #    By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 08:57:33 by ozahdi            #+#    #+#              #
-#    Updated: 2023/12/01 15:01:19 by ozahdi           ###   ########.fr        #
+#    Updated: 2023/12/01 19:19:55 by ozahdi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_putchar.c ft_putnbr_adr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c print_format.c ft_printf.c\
+SRC	=	ft_putchar.c ft_putnbr_adr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c print_format.c ft_printf.c\
 
-NAME	=	libftprintf.a
+NAME= libftprintf.a
+CC= CC
+CFLAGS= -Wall -Wextra -Werror
 
-CC		=	cc
+	
+OBJ = $(SRC:.c=.o)
 
-RM		=	rm -f
+all: $(NAME)
 
-CFLAGS	=	-Wall -Wextra -Werror
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	
+%.o: %.c ft_printf.h
+	$(CC) $(CFLAGS) -c $<
 
-OBJS	=	${SRCS:.c=.o}
+clean:
+	rm -f $(OBJ)
+ 
+fclean: clean
+	rm -f $(NAME)
 
-${NAME}	:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
-			
-%.o		: %.c  libftprintf.a
-		$(CC) $(CFLAGS) -c $< -o $@
+re: fclean all
 
-all		:	${NAME}
-
-clean	:	${RM} ${OBJS}
-
-fclean	:	clean
-			${RM} ${NAME}
-
-re		:	fclean all
-
-.PHONY	:	all clean fclean re
+.PHONY: clean
