@@ -6,28 +6,28 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:44:51 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/01 19:18:41 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/01 20:21:34 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *str)
+void ft_putstr(char *str, int *len)
 {
-    int len;
     int i;
 
-    len = 0;
     i = 0;
     if(!str)
     {
-        ft_putstr("(null)");
-        return 0;
+        ft_putstr("(null)", len);
+        return ;
     }
-    while (str[i])
+    else
     {
-        len += ft_putchar(str[i]);
-        i++;
+        while (str[i])
+        {
+            ft_putchar(str[i], len);
+            i++;
+        }
     }
-    return (len);
 }

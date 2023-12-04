@@ -6,35 +6,31 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:48:37 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/01 18:54:07 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/04 19:37:16 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr_hex(long int nb, int c)
+void ft_putnbr_hex(unsigned int nb, int c, int *len)
 {
     char    *base;
-    int     len;
-    int     counter;
-    
-    counter = 0;
+
     if (c == 'x')
         base = "0123456789abcdef";
-    else if (c == 'X')
+    else
         base = "0123456789ABCDEF";
-    len = 15;
-    if (nb < 0)
+    if (nb <= 15)
+        ft_putchar(base[nb], len);
+   else
     {
-        counter += ft_putchar('-');
-        nb *= -1;
+        ft_putnbr_hex((nb / 16), c, len);
+        ft_putnbr_hex((nb % 16), c, len);
     }
-    if (nb >= len)
-    {
-        counter += ft_putnbr_hex(nb / len, c);
-        counter += ft_putchar(base[nb % len]);
-    }
-    if (nb < len)
-        counter += ft_putchar(base[nb]);
-    return (counter);
 }
+
+// int main()
+// {
+//     int i = 0;
+//     ft_putnbr_hex(LONG_MIN, 'x', &i); 
+// }
