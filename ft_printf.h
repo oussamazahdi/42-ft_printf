@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:04:46 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/04 19:35:05 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:11:31 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 
 void    ft_putchar(char c, int *len);
-void    ft_putnbr_adr(void *nb, int *len);
+void    ft_putadr(void *nbr, int *len);
 void    ft_putnbr_hex(unsigned int nb, int c, int *len);
 void    ft_putnbr_uns(unsigned int nb, int *len);
 void    ft_putnbr(long long int nb, int *len);

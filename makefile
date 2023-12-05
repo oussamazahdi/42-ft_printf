@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 08:57:33 by ozahdi            #+#    #+#              #
-#    Updated: 2023/12/03 16:42:41 by ozahdi           ###   ########.fr        #
+#    Updated: 2023/12/05 13:06:23 by ozahdi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC	=	ft_putchar.c ft_putnbr_adr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c ft_printf.c\
+SRC	=	ft_putchar.c ft_putadr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c ft_printf.c\
 
 NAME= libftprintf.a
 CC= CC

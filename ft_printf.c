@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:55:23 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/04 19:32:45 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:20:52 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void print_format(char specifier, va_list ap, int *len)
     else if (specifier == 's')
         ft_putstr(va_arg(ap, char *), len);
     else if (specifier == 'p')
-        ft_putnbr_adr(va_arg(ap, void *),len);
+        ft_putadr(va_arg(ap, void *),len);
     else if (specifier == 'i' || specifier == 'd')
         ft_putnbr(va_arg(ap, int), len);
     else if (specifier == 'u')
@@ -32,30 +32,6 @@ void print_format(char specifier, va_list ap, int *len)
         ft_putchar(specifier, len);
 }
 
-// int ft_printf(const char *format, ...)
-// {
-//     int         i = 0;
-//     int         len = 0;
-//     va_list     ap;
-
-//     if (write (1, "", 1) < 0)
-//         return (-1);
-//     va_start(ap, format);
-//     while (format && format[i])
-//     {
-//         if(format[i] == '%' && format[i + 1])
-//         {
-//             i++;;
-//             print_format(format[i], ap, &len);
-//         }
-//         else
-//             ft_putchar(format[i], &len);
-//         i++;
-//     }
-  
-//     va_end(ap);
-//     return (len);
-// }
 int	ft_printf(const char *format, ...)
 {
 	int			i;
@@ -82,8 +58,7 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (len);
 }
-int main()
-{
-	ft_printf("%p    %p\n", LONG_MIN,LONG_MAX);
-	printf("%p    %p\n", LONG_MIN,LONG_MAX);
-}
+// int main()
+// {
+// 	 printf("%p\n",-9223372036854775809);
+// }
