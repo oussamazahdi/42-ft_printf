@@ -6,14 +6,14 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:29:29 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/03 15:07:23 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:41:55 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_putchar(char c, int *len)
+void	ft_putchar(char c, int *len)
 {
-    write(1, &c, 1);
-    (*len)++;
+	write(1, &c, 1);
+	(*len)++;
 }
