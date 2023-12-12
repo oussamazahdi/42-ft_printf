@@ -6,7 +6,7 @@
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:49:24 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/05 18:44:34 by ozahdi           ###   ########.fr       */
+/*   Updated: 2023/12/11 17:19:39 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_putnbr_adr(unsigned long long nb, int *len)
 	else
 	{
 		ft_putnbr_adr((nb / 16), len);
-		ft_putchar(base[(nb % 16)], len);
+		ft_putnbr_adr((nb % 16), len);
 	}
 }
 
