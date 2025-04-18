@@ -34,3 +34,4 @@ void	ft_putadr(void *nbr, int *len)
 	ft_putstr("0x", len);
 	ft_putnbr_adr(nb, len);
 }
+

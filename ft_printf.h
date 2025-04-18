@@ -25,3 +25,4 @@ void	ft_putstr(char *str, int *len);
 int		ft_printf(const char *format, ...);
 
 #endif
+

@@ -28,3 +28,4 @@ void	ft_putnbr_hex(unsigned int nb, int c, int *len)
 		ft_putnbr_hex((nb % 16), c, len);
 	}
 }
+

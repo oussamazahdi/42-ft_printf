@@ -22,3 +22,4 @@ void	ft_putnbr_uns(unsigned int nb, int *len)
 	else
 		ft_putchar((nb + '0'), len);
 }
+
