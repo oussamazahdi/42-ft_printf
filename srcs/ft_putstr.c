@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozahdi <ozahdi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 14:48:37 by ozahdi            #+#    #+#             */
-/*   Updated: 2023/12/05 18:40:27 by ozahdi           ###   ########.fr       */
+/*   Created: 2023/12/01 14:44:51 by ozahdi            #+#    #+#             */
+/*   Updated: 2023/12/05 18:36:56 by ozahdi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-void	ft_putnbr_hex(unsigned int nb, int c, int *len)
+void	ft_putstr(char *str, int *len)
 {
-	char	*base;
+	int	i;
 
-	if (c == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	if (nb <= 15)
-		ft_putchar(base[nb], len);
+	i = 0;
+	if (!str)
+	{
+		ft_putstr("(null)", len);
+		return ;
+	}
 	else
 	{
-		ft_putnbr_hex((nb / 16), c, len);
-		ft_putnbr_hex((nb % 16), c, len);
+		while (str[i])
+		{
+			ft_putchar(str[i], len);
+			i++;
+		}
 	}
 }
 

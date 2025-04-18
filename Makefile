@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_putchar.c ft_putadr.c ft_putnbr_hex.c ft_putnbr_uns.c ft_putnbr.c ft_putstr.c ft_printf.c\
+SRCS	=	./srcs/ft_putchar.c ./srcs/ft_putadr.c ./srcs/ft_putnbr_hex.c\
+			./srcs/ft_putnbr_uns.c ./srcs/ft_putnbr.c ./srcs/ft_putstr.c ./srcs/ft_printf.c\
 
 NAME	=	libftprintf.a
 
@@ -25,7 +26,7 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJS)
 		ar rc $(NAME) $(OBJS)
 	
-%.o		: %.c ft_printf.h
+%.o		: %.c includes/ft_printf.h
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean	:
