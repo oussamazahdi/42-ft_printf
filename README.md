@@ -114,13 +114,12 @@ int main(void)
 │   └── ft_printf.h
 ├── srcs/
 │   ├── ft_printf.c
-│   ├── ft_handle_char.c
-│   ├── ft_handle_string.c
-│   ├── ft_handle_pointer.c
-│   ├── ft_handle_integer.c
-│   ├── ft_handle_unsigned.c
-│   ├── ft_handle_hex.c
-│   └── ...
+│   ├── ft_putadr.c
+│   ├── ft_putchar.c
+│   ├── ft_putnbr_hex.c
+│   ├── ftputnbr_uns.c
+│   ├── ft_putnbr.c
+│   └── ft_putstr.c
 └── README.md
 ```
 
@@ -146,7 +145,7 @@ This project follows the 42 School norm, which includes:
 
 ## 👤 Author
 
-- Your Name (@yourusername)
+- Oussama Zahdi (@oussamazahdi)
 
 ## 💬 Acknowledgements
 
